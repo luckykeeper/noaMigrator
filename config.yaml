@@ -1,0 +1,45 @@
+# noaMigrator Settings
+# Powered By Luckykeeper <luckykeeper@luckykeeper.site | https://luckykeeper.site | https://github.com/luckykeeper>
+
+# noaMigrator 本体设置
+
+# Prometheus Exporter http port
+# APIPort: "6969"
+APIPort: "6969"
+
+# 迁移用户的 ID，可以是多个
+# UserID:
+#   - "1"
+#   - "69"
+
+# 需要迁移的路径，写ID后路径（web 上面能看到的），如果不填表示所有目录
+# SyncPath:
+#   - Music
+#   - Video
+
+# 目标 S3 存储的 Endpoint
+# S3Endpoint: "https://play.min.io/"
+
+# 目标 S3 存储的 Access Key
+S3AccessKey: xxx
+
+# 目标 S3 存储的 Secret Key
+S3SecretKey: xxx
+
+# 目标 S3 存储桶，需要提前手动创建好
+S3Bucket: xxx
+
+# 同步任务开始的 Cron 表达式
+# Cron: "0 0 1 * * ?"
+
+# Database:
+# 填写 cloudreve 的数据库信息，目的是同步的时候校验数据用，文件夹和数据库校验一致才会做同步操作
+# 数据库理论上支持 cloudreve 支持的所有数据库（sqlite/mysql/mssql/postgres）
+# 目前仅在 sqlite 测试过，别的未经测试，可能会有意料之外的问题出现，建议提前做好备份
+DataBaseType: sqlite # 数据库类型
+# DSN 格式，不同数据库有所区别：
+# mysql: username:password@protocol(address)/dbname?param=value
+# sqlite file:test.db
+# pgsql: postgres://pqgotest:password@localhost/pqgotest?sslmode=verify-full
+# mssql:sqlserver://user:passwd@host:1443?database=sa
+DSN: file:cloudreve.db # 数据库连接信息示例参考上面几行
